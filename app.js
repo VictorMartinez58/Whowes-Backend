@@ -3,26 +3,27 @@
 //Imports
 var express = require('express');
 var bodyParser = require('body-parser');
+const cors = require("cors");
+
 
 //exec express
 var app = express();
 
 
-//Routes
+//Routes files
+const userRoutes = require("./routes/user"); //bring in our user routes
+
 
 //Middlewares
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 //CORS
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+app.use(cors());
 
-    next();
-});
+
+//Use Routes
+app.use("/user", userRoutes);
 
 //Export
 module.exports = app; 
