@@ -11,7 +11,8 @@ var app = express();
 
 
 //Routes files
-const userRoutes = require("./routes/user"); //bring in our user routes
+const userRoutes = require("./routes/user");
+const resultRoutes = require("./routes/result");
 
 
 //Middlewares
@@ -24,6 +25,7 @@ app.use(cors());
 
 //Use Routes
 app.use("/user", userRoutes);
+app.use("/result", resultRoutes);
 
 //Export
 module.exports = app; 
