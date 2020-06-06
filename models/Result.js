@@ -8,6 +8,7 @@ var resultSchema = Schema({
     user_id: { type: Schema.ObjectId, ref: 'User' },
     totalPrice: Number,
     products: [String],
+    users: [String],
     date: {type: Date, default: Date.now},
     closed: {type: Boolean, default: false},
 });

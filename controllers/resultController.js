@@ -16,6 +16,7 @@ const controller = {
         result.user_id = params.user_id;
         result.totalPrice = params.totalPrice;
         result.products = params.products;
+        result.users = params.users;
         
 
 
