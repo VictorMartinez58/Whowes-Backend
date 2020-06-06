@@ -9,6 +9,7 @@ const auth = require('../config/auth');
 router.post('/save', auth,resultController.save);
 router.get('/results-user/:user_id', auth,resultController.getResultsByUser);
 router.get('/result/:_id', auth,resultController.getResult);
+router.put('/result-close/:_id', auth,resultController.setClosed);
 router.delete('/result/:_id', auth,resultController.delete);
 
 module.exports = router;
