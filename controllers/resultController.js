@@ -111,6 +111,34 @@ const controller = {
     },
 
 
+    delete: (req, res) => {
+        
+        var _id = req.params._id;
+
+        Result.findOneAndDelete({ _id: _id }, (err, resultRemoved) => {
+            if (err) {
+                return res.status(500).send({
+                    status: "error",
+                    message: "Error al borrar"
+                });
+            }
+
+            if (!resultRemoved) {
+                return res.status(404).send({
+                    status: "error",
+                    message: "No se ha borrado el articulo, posiblemente no exista"
+                });
+            }
+
+            return res.status(200).send({
+                status: "success",
+                result: resultRemoved
+            });
+        })
+
+    }
+
+
 }
 
 module.exports = controller;
