@@ -111,7 +111,7 @@ const controller = {
     },
 
 
-    setClosed: (req, res) => {
+    update: (req, res) => {
 
         var _id = req.params._id;
 
