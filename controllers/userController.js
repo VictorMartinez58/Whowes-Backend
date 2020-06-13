@@ -42,5 +42,9 @@ exports.registerNewUser = async (req, res) => {
 
 
   exports.getUserDetails = async (req, res) => {
-    await res.json(req.userData);
+    try {
+      await res.json(req.userData);
+    } catch(err){
+      console.log(err);
+    }
   };
