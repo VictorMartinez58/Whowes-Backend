@@ -1,3 +1,3 @@
 module.exports = {
-    database: "mongodb://localhost:27017/whowes_api_rest",
+    database: process.env.DB_URL || "mongodb://localhost:27017/whowes_api_rest",
 };
